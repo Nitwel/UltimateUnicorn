@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/abstract-seamless-pattern-with-winter-forest-background_1015-1672.jpg" type="Texture" id=1]
+[ext_resource path="res://src/Blocks/Plank.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Blocks/Seesaw.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=4]
+
+[node name="Lobby" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+scroll_base_scale = Vector2( 0.1, 0.1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 626, 626 )
+
+[node name="abstract-seamless-pattern-with-winter-forest-background_1015-1672" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBlock5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1293, 470 )
+
+[node name="Seesaw" parent="." instance=ExtResource( 3 )]
+position = Vector2( 555, 438 )
+
+[node name="StaticBlock2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 912, 438 )
+
+[node name="Seesaw2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1624, 420 )
+
+[node name="StaticBlock" parent="." instance=ExtResource( 2 )]
+position = Vector2( 215, 470 )
+length = 6
+
+[node name="StaticBlock4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1960, 406 )
+
+[node name="StaticBlock3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1109, 331 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 228, 123 )

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/blocks/plank4.png" type="Texture" id=2]
+[ext_resource path="res://assets/blocks/plank6.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends StaticBody2D
+
+export var length = 4 setget set_length
+onready var sprite4 = $Sprite4
+onready var sprite6 = $Sprite6
+onready var collision = $CollisionShape2D
+
+func _ready():
+	collision.shape = collision.shape.duplicate()
+	set_length(length)
+
+func set_length(new_length: int):
+	length = new_length
+	if not sprite4 or not sprite6 or not collision:
+		return
+	
+	collision.shape.extents.x = length * 32
+		
+	if length == 6:
+		sprite4.hide()
+		sprite6.show()
+	else:
+		sprite6.hide()
+		sprite4.show()
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128, 32 )
+
+[node name="Plank" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = SubResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )

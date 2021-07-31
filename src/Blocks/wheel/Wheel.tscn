@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Blocks/wheel/Wheel.gd" type="Script" id=2]
+[ext_resource path="res://assets/blocks/plank4.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 32 )
+
+[node name="Wheel" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Bottom" type="RigidBody2D" parent="."]
+position = Vector2( 0, 256 )
+collision_layer = 8
+collision_mask = 0
+mode = 3
+
+[node name="Sprite" type="Sprite" parent="Bottom"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Right" type="RigidBody2D" parent="."]
+position = Vector2( 256, 0 )
+collision_layer = 8
+collision_mask = 0
+mode = 3
+
+[node name="Sprite" type="Sprite" parent="Right"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Left" type="RigidBody2D" parent="."]
+position = Vector2( -256, 0 )
+collision_layer = 8
+collision_mask = 0
+mode = 3
+
+[node name="Sprite" type="Sprite" parent="Left"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Top" type="RigidBody2D" parent="."]
+position = Vector2( 0, -256 )
+collision_layer = 8
+collision_mask = 0
+mode = 3
+
+[node name="Sprite" type="Sprite" parent="Top"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+visible = false
+shape = SubResource( 1 )
