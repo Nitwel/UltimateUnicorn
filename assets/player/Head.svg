@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="188.897" height="230.198" viewBox="0 0 188.897 230.198">
+  <g id="Head" transform="translate(-203.185 -223.86) rotate(-0.054)">
+    <g id="Gruppe_9" data-name="Gruppe 9">
+      <path id="Pfad_9" data-name="Pfad 9" d="M280.624,299.168s-23.372-26.368-44.348-13.9-16.54,18.94-11.028,53.34.84,61.608-13.664,83.06-7.864,27.4-1.2,31.044c20.7,11.34,35.892-42.088,50.628-89.348C271.016,331.26,286.864,301.284,280.624,299.168Z" fill="#e0afff" fill-rule="evenodd"/>
+    </g>
+    <g id="Gruppe_10" data-name="Gruppe 10">
+      <path id="Pfad_10" data-name="Pfad 10" d="M246.5,330.52c-4.012-1.968-14.96-25.8-8.712-31.484s17.632,5.512,24.076,11.8S250.516,332.488,246.5,330.52Z" fill="#cfafe2" fill-rule="evenodd"/>
+    </g>
+    <g id="Gruppe_11" data-name="Gruppe 11">
+      <path id="Pfad_11" data-name="Pfad 11" d="M293.368,359.532l28.836,17.56a29.084,29.084,0,0,0-11.1,16.872c-13.808-6.252-15.948-8.432-19.384-13.984,0,0-23.752-1.156-29.856-14.116C263,353.352,293.492,360.6,293.368,359.532Z" fill="#f6d2f1" fill-rule="evenodd"/>
+    </g>
+    <g id="Gruppe_12" data-name="Gruppe 12">
+      <path id="Pfad_12" data-name="Pfad 12" d="M292.472,375.452c7.56,8.356,17.408,17.732,44.592,21.044,15.108,1.836,31.52-.92,45.068-14.02,21.352-20.644,1.38-51.008-5.968-56.792-13.644-10.752-38.864-10.9-45.064-13.672-22.088-9.86-72.572-2.108-72.572-2.108s-18.964-17.792-20.6-5.852,7.908,33.78,8.732,51.712C247.516,374.4,292.472,375.452,292.472,375.452Z" fill="#ffddfa" fill-rule="evenodd"/>
+    </g>
+    <g id="Gruppe_13" data-name="Gruppe 13" transform="translate(2.301 0.489)">
+      <path id="Pfad_13" data-name="Pfad 13" d="M273.192,281.428s.72,3.836,17.02,4.316,43.748-2.192,43.868,14.188-17.98,27.4-39.072,25.484-42.432-24.088-42.432-24.088l25.412.956Z" fill="#d697ff" fill-rule="evenodd"/>
+    </g>
+    <g id="Gruppe_14" data-name="Gruppe 14">
+      <path id="Pfad_14" data-name="Pfad 14" d="M336.384,224.176l-28.66,86.044c-14.444,6.644-23.5,2.6-27.1-6.1Z" fill="#fff" fill-rule="evenodd"/>
+    </g>
+    <g id="Gruppe_15" data-name="Gruppe 15" transform="translate(-0.671 1.438)">
+      <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="4.028" cy="7.62" rx="4.028" ry="7.62" transform="translate(366.896 349.32)" fill="#1a1a1a"/>
+    </g>
+    <g id="Gruppe_16" data-name="Gruppe 16" transform="translate(-14.643 -1.798)">
+      <path id="Pfad_15" data-name="Pfad 15" d="M263.531,323.772c.491-.54-8.658-8.064-6.5-14.42,2.44-7.176,6.375,4.528,8.285,5.752" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5" stroke-width="1.729" fill-rule="evenodd"/>
+    </g>
+    <g id="Auge1">
+      <g id="Gruppe_17" data-name="Gruppe 17" transform="translate(-8.327 -17.57)">
+        <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="10.065" cy="13.226" rx="10.065" ry="13.226" transform="translate(313.442 348.545)" fill="#1a1a1a"/>
+      </g>
+      <g id="Gruppe_18" data-name="Gruppe 18" transform="translate(-66.969 -0.384)">
+        <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="3.252" cy="6.088" rx="3.252" ry="6.088" transform="translate(380.461 337.528)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

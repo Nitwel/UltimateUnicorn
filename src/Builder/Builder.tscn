@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Builder/Builder.gd" type="Script" id=1]
+[ext_resource path="res://src/abstract-seamless-pattern-with-winter-forest-background_1015-1672.jpg" type="Texture" id=2]
+[ext_resource path="res://src/Blocks/Plank.tscn" type="PackedScene" id=3]
+
+[node name="Builder" type="Node2D"]
+script = ExtResource( 1 )
+block_path = NodePath("Plank")
+
+[node name="abstract-seamless-pattern-with-winter-forest-background_1015-1673" type="Sprite" parent="."]
+position = Vector2( 6120, 504 )
+texture = ExtResource( 2 )
+
+[node name="abstract-seamless-pattern-with-winter-forest-background_1015-1672" type="Sprite" parent="."]
+position = Vector2( 668, 498 )
+texture = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 296 )
+current = true
+zoom = Vector2( 2, 2 )
+limit_left = 0
+limit_top = 0
+limit_right = 6400
+limit_bottom = 6400
+editor_draw_limits = true
+
+[node name="Plank" parent="." instance=ExtResource( 3 )]
+position = Vector2( 752, 552 )
