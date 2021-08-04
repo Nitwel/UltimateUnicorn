@@ -1,5 +1,6 @@
+tool
 extends Level
-
+class_name Level1
 
 # Declare member variables here. Examples:
 # var a = 2

@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Player
 
 onready var just_aired_timer: Timer = $JustAiredTimer
 onready var throw_timer = $ThrowTimer
@@ -25,10 +26,11 @@ export var air_speed := 200.0
 export var jump_force := 600.0
 const move_accel := 4000
 const move_deaccel = 4000
-const air_deaccel = 2000
+const air_deaccel = 1000
 const move_max_vel = 500
+var default_gravity_scale = gravity_scale
 
-var _state: int = IDLE
+var _state: int = AIR
 var throwing = false
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
@@ -37,8 +39,6 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	var wall_index = -1
 	var right_wall = true
 	var floor_index = -1
-	
-	print(state.linear_velocity.x)
 	
 	for x in range(state.get_contact_count()):
 		var ci = state.get_contact_local_normal(x)
@@ -79,27 +79,27 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 			if state.linear_velocity.x == 0:
 				change_state(IDLE)
 		AIR:
-			move(state, move_direction)
-			
 			if is_on_ground and just_aired_timer.is_stopped():
 				change_state(IDLE)
 			elif is_on_wall and just_aired_timer.is_stopped():
 				change_state(SLIDE)
+			elif not is_on_ground and not is_on_wall and state.get_contact_count() == 0:
+				move(state, move_direction)
 		
 		SLIDE:
 			if is_on_wall and move_direction.x and right_wall == (move_direction.x > 0):
-				#state.linear_velocity.x = move_direction.x * air_speed
-				pass
+				state.linear_velocity.x = move_direction.x * air_speed
 			elif state.get_contact_count() == 0:
 				change_state(AIR)
 			elif is_on_ground and just_aired_timer.is_stopped():
 				change_state(IDLE)
 			if is_on_wall and Input.is_action_just_pressed("jump"):
-				apply_central_impulse(Vector2(-6000 if right_wall else 6000, -600))
-				state.linear_velocity.x -6000 if right_wall else 6000
+				state.linear_velocity = Vector2(700 if right_wall else -700, -500)
 				throwing = true
 				change_state(AIR)
-	state.linear_velocity.y += 20
+				print(state.linear_velocity)
+				
+	state.linear_velocity += state.get_total_gravity() * state.get_step()
 	
 func get_move_direction() -> Vector2:
 	return Vector2(
@@ -139,7 +139,7 @@ func enter_state() -> void:
 		AIR:
 			just_aired_timer.start()
 		SLIDE:
-			gravity_scale = 2
+			gravity_scale = 5
 			friction = 0
 		_:
 			return 
@@ -147,8 +147,10 @@ func enter_state() -> void:
 func leave_state() -> void:
 	match _state:
 		SLIDE:
-			gravity_scale = 9
-			friction = 0
+			gravity_scale = default_gravity_scale
+			friction = 1
+		AIR:
+			pass
 		_:
 			return
 	
